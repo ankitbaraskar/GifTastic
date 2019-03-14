@@ -55,7 +55,7 @@ $("button").on("click", function () {
             var results = response.data;
             console.log(results);
 
-            
+            // for the response array, add rating and image to a div, then append that to page
             for (var i = 0; i < results.length; i++) {
 
                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
@@ -81,6 +81,23 @@ $("button").on("click", function () {
                     $("#gifs-appear-here").prepend(gifDiv);
                 }
             }
+
+            // click listener to animate or still the gif
+            $(".gif").on("click", function() {
+                console.log("this has been clicked")
+                var state = $(this).attr("data-state");
+                console.log(state);
+                
+                if (state === "still") {
+                  $(this).attr("src", $(this).attr("data-animate"));
+                  $(this).attr("data-state", "animate");
+                } else {
+                  $(this).attr("src", $(this).attr("data-still"));
+                  $(this).attr("data-state", "still");
+                }
+              });
+
+
         });
 });
 
