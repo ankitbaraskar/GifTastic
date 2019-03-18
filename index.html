@@ -21,14 +21,16 @@
         <div class="row" id="row-div">
 
             <div class="col-sm-6">
-                    <form id="tv-form">
-                        <label for="tv-input">Add a TV show!!</label>
-                        <input type="text" id="tv-input">
-    
-                        <!-- Button triggers new tv show to be added -->
-                        <input id="add-tv" type="submit" value="Submit">
-                    </form>
-                </div>
+                <form class="input-group mb-3" id="tv-form">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" id="basic-addon1" for="tv-input">Add a TV show!!</label>
+                    </div>
+                    <input type="text" id="tv-input" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+
+                    <!-- Button triggers new tv show to be added -->
+                    <input class="btn btn-primary" id="add-tv" type="submit" value="Submit">
+                </form>
+            </div>
 
         </div>
 

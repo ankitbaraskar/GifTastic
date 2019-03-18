@@ -9,7 +9,7 @@ function renderButtons(takeTopicsArray) {
 
     for (var i = 0; i < takeTopicsArray.length; i++) {
         var buttonvar = $("<button>");
-        buttonvar.addClass("tvShowName");
+        buttonvar.addClass("tvShowName btn btn-primary");
         buttonvar.attr("data-name", takeTopicsArray[i]);
         buttonvar.text(takeTopicsArray[i]);
         $("#buttons-view").append(buttonvar);
@@ -69,6 +69,7 @@ function makeAJAXcall() {
                 tvImage.attr("data-state", "still");
                 tvImage.addClass("gif");
 
+                gifDiv.attr("id","gifDiv-id");
                 gifDiv.append(pForRating);
                 gifDiv.append(tvImage);
 

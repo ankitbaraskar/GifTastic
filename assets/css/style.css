@@ -1,0 +1,33 @@
+button{
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+p{
+    margin-bottom: 0px;
+}
+
+img{
+    max-width: 300px;
+    max-height: 150px;
+}
+
+#buttons-view{
+    margin-bottom: 20px;
+    
+}
+
+#tv-form{
+    font-weight: bolder;
+}
+#add-tv{
+    margin-left: 5px;
+}
+
+#gifDiv-id{
+    float: left;
+    margin-bottom: 20px;
+    
+    margin-right: 20px;
+}
