@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -13,18 +16,23 @@
 
     <div id="buttons-view"></div>
 
+    <main class="container-fluid">
 
-    <form id="tv-form">
-        <label for="tv-input">Add a TV show!!</label>
-        <input type="text" id="tv-input">
+        <div class="row" id="row-div">
 
-        <!-- Button triggers new tv show to be added -->
-        <input id="add-tv" type="submit" value="Submit">
-    </form>
+            <div class="col-sm-6">
+                    <form id="tv-form">
+                        <label for="tv-input">Add a TV show!!</label>
+                        <input type="text" id="tv-input">
+    
+                        <!-- Button triggers new tv show to be added -->
+                        <input id="add-tv" type="submit" value="Submit">
+                    </form>
+                </div>
 
-    <div id="gifs-appear-here">
-    </div>
+        </div>
 
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

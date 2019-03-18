@@ -18,8 +18,16 @@ function renderButtons(takeTopicsArray) {
 //call this function so that the buttons are on there
 renderButtons(topics);
 
+// track number of times ajax is called so that we can decide with to dynamically prepend the gifs appear here div
+var AJAXcount = 0;
+addDivforGifs(AJAXcount);
+
 // main function to add img tags with gifs and control animate
 function makeAJAXcall() {
+
+    // to dynamically add the gifs appear here div
+    AJAXcount++
+    addDivforGifs(AJAXcount);
 
     // to clear existing gifs
     $("#gifs-appear-here").empty();
@@ -38,12 +46,12 @@ function makeAJAXcall() {
         var results = response.data;
         console.log(results);
 
-        var countOfGifs=0;
+        var countOfGifs = 0;
 
         // for the response array, add rating and image to a div, then append that to page
         for (var i = 0; i < results.length; i++) {
 
-            if (results[i].rating !== "r" && results[i].rating !== "pg-13" && countOfGifs< 10) {
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13" && countOfGifs < 10) {
                 countOfGifs++;
 
                 var gifDiv = $("<div>");
@@ -65,7 +73,7 @@ function makeAJAXcall() {
                 gifDiv.append(tvImage);
 
                 $("#gifs-appear-here").prepend(gifDiv);
-                
+
             }
         }
 
@@ -91,7 +99,31 @@ function makeAJAXcall() {
 
 };
 
+// function responsible for add the gifs appear here div depending on the number of ajax calls
+function addDivforGifs(trackdiv) {
+    if (trackdiv == 1) {
+        var divWithClass = $("<div>");
+        var divWithId = $("<div>");
 
+        divWithClass.addClass("col-sm-6");
+        divWithId.attr("id", "gifs-appear-here");
+
+        divWithClass.append(divWithId);
+        $("#row-div").prepend(divWithClass);
+
+    }
+    else if (trackdiv > 1) {
+        $(".col-sm-6:first").remove();
+        var divWithClass = $("<div>");
+        var divWithId = $("<div>");
+
+        divWithClass.addClass("col-sm-6");
+        divWithId.attr("id", "gifs-appear-here");
+
+        divWithClass.append(divWithId);
+        $("#row-div").prepend(divWithClass);
+    }
+};
 
 // on click listener on the submit form element 
 // 1. stop default action
