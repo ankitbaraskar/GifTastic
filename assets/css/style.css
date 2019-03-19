@@ -1,5 +1,9 @@
 body{
     background: url('../images/Abstract-Blue-Background.jpg');
+    background-size: 100% 100%;
+}
+html{
+    height: 100%;
 }
 button{
     margin-right: 5px;
@@ -20,10 +24,13 @@ img{
     margin-bottom: 20px;
     
 }
-
-#tv-form{
-    font-weight: bolder;
+.input-group-text {
+    font-weight: 620;
 }
+
+/* #tv-form{
+    font-weight: bolder;
+} */
 #add-tv{
     margin-left: 5px;
 }
